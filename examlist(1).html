@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<meta name="viewport" content="width=device-width,user-scalable=yes">
+		<meta charset="UTF-8">
+		<title>目录页</title>
+	</head>
+	<body>
+		<div class="bigDiv">
+			<div class="mainContet">
+
+				<div class="main">
+					<!--头部-->
+					<div class="head">
+						<div class="head1">
+							<div>
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/backOff.png" />
+							</div>
+						</div>
+						<div class="head2">目录</div>
+						<div class="head3">
+							<div>
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/tzkS.png" alt="">
+							</div>
+						</div>
+					</div>
+					<!--脚部-->
+					<div class="foot">
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/homes.png">
+							</div>
+							<div style="color:#7d7a7a">主页</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/jiaofu.png">
+							</div>
+							<div style="color:#7d7a7a">辅导</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/WechatIMG91s.png">
+							</div>
+
+							<div style="color:#7d7a7a">教辅</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/zuoyes.png">
+							</div>
+							<div style="color:#7d7a7a">作业</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/mes.png">
+							</div>
+							<div style="color:#7d7a7a">我的</div>
+						</div>
+					</div>
+					<!--内容-->
+					<div style="padding-bottom: 5rem;">
+						<div class="nav_card">
+							{volist name='$read' id='title'}
+							<div class="nav_card_item">
+								<div class="card_left">
+									{if $title.picture}
+									<img src="https://cdnfile.corpidea.com{$title.picture}" alt="{$title.title}"> {else /}
+									<img src="https://cdnfile.corpidea.com/style/mobile/images/index_img.png" alt="{$title.title}"> {/if}
+								</div>
+
+							</div>
+							{/volist}
+						</div>
+
+						<div class="progress">
+							<div class="pg_top">
+								<div class="pg_text">学习进度</div>
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/xx_w.png" />
+								<div class="pg_num">10/20</div>
+							</div>
+							<div class="pg">
+								<div class="pg_a" style="width:20%"></div>
+								<div class="caifu">
+									<img src="https://cdnfile.corpidea.com/wap/images/gift.png" />
+								</div>
+							</div>
+						</div>
+						<div class="ca" style="font-size: .9rem;">
+							{volist name='$list' id='item'}
+							<div class="catalog">
+								<div class="catalog_item">
+									<div class="txt_name">{$item.title}</div>
+									<div class="xx_list">
+										<img src="https://cdnfile.corpidea.com/wap/assets/img/xx_w.png" />
+										<img src="https://cdnfile.corpidea.com/wap/assets/img/xx_w.png" />
+										<img src="https://cdnfile.corpidea.com/wap/assets/img/xx_w.png" />
+									</div>
+								</div>
+							</div>
+							{/volist}
+						</div>
+						<div class="more_answer">
+							更多
+							<img src="https://cdnfile.corpidea.com/wap/assets/img/icon_show.png" />
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="divEwm">
+				<img src="https://cdnfile.corpidea.com/wap/assets/img/seoGg.png" />
+			</div>
+		</div>
+	</body>
+
+</html>
+<style>
+	.xx_list {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		/*margin-right: 0.01rem;*/
+	}
+	
+	.txt_num {
+		margin-right: 1.5rem;
+	}
+	
+	.txt_name {
+		overflow: hidden;
+		/*注意不要写在最后了*/
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		display: flex;
+		align-items: center;
+		width: 70%;
+		height: 3rem;
+		margin-right: 2rem;
+	}
+	
+	.catalog_item img {
+		width: 1rem;
+		height: 1rem;
+		margin-right: .05rem;
+	}
+	
+	.catalog {
+		margin-top: 0.1rem;
+		display: flex;
+		align-items: center;
+		height: 3rem;
+		background: #F4F4F4;
+	}
+	
+	.catalog:nth-child(2n) {
+		background: #FFFFFF;
+	}
+	
+	.catalog {
+		margin-top: 0.01rem;
+		display: flex;
+		align-items: center;
+		height: 3rem;
+	}
+	
+	.catalog_item {
+		color: #666666;
+		height: 3rem;
+		width: 100%;
+		display: flex;
+		margin: 0 1.5rem;
+		align-items: center;
+		border-top: .05rem dashed #DFDFDF;
+		border-bottom: .05rem dashed #DFDFDF;
+	}
+	
+	.progress {
+		font-size: .15rem;
+		background: #FFFFFF;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+	}
+	
+	.pg {
+		display: flex;
+		border-radius: .5rem;
+		margin: 0.5rem 1rem;
+		height: .4rem;
+		background: #DFDFDF;
+	}
+	
+	.pg_a {
+		background: #26A3FF !important;
+		width: 10%;
+		border-radius: .8rem;
+		height: .4rem;
+	}
+	
+	.pg_text {
+		margin-right: 1rem;
+	}
+	
+	.pg_top img {
+		width: 1.2rem;
+		height: 1.2rem;
+	}
+	
+	.pg_num {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: .05rem;
+	}
+	
+	.caifu {
+		position: absolute;
+		right: 0.15rem;
+		bottom: .05rem;
+		width: 3rem;
+		height: 3rem;
+	}
+	
+	.caifu img {
+		width: 100%;
+	}
+	
+	.pg_top {
+		margin-top: 1rem;
+		margin-left: 1rem;
+		display: flex;
+		align-items: center;
+		letter-spacing: 0.01rem;
+	}
+	
+	.card_right {
+		width: 7rem;
+		margin-top: 1rem;
+	}
+	
+	.card_title {
+		color: #666666;
+		font-size: 1.2rem;
+	}
+	
+	.card_grade {
+		color: #666666;
+		margin-top: .8rem;
+		font-size: 1rem;
+	}
+	
+	.card_left {
+		width: 4.5rem;
+		margin: .8rem;
+	}
+	
+	.card_left img {
+		width: 100%;
+	}
+	
+	.card_left2 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 3;
+		width: 6.1rem;
+		height: 8rem;
+		background: rgb(2, 2, 2, 0.2);
+	}
+	
+	.card_img {
+		margin: .1rem;
+	}
+	
+	.nav_card {
+		overflow: auto;
+		/* height: 12rem; */
+		display: flex;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		background: #FBFBFB;
+		width: 100%;
+		height: 10.5rem;
+		padding-top: 2.5rem;
+	}
+	
+	.nav_card_item {
+		z-index: 2;
+		position: relative;
+		box-shadow: -1px 1px 10px #dadada;
+		display: flex;
+		background: #FFFFFF;
+		height: 8rem;
+		margin-left: 1rem;
+		margin-top: 1rem;
+		/* margin: 1rem 0 1rem 1rem; */
+	}
+	
+	.nav_card_title {
+		margin-top: 0.1rem;
+		white-space: normal;
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+	
+	.card_btn {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #3AA3FF;
+		width: 5rem;
+		height: 2rem;
+		font-size: .15rem;
+		margin-top: 0.5rem;
+		border-radius: 5rem;
+		color: #FFFFFF;
+	}
+	
+	.dingyue {
+		position: absolute;
+		width: .6rem;
+		height: 2rem;
+		left: -.2rem;
+		transform: skew(-12deg);
+		animation: mymove 1s infinite;
+		-webkit-animation: mymove 1s infinite;
+		position: relative;
+		background: linear-gradient( rgba(255, 255, 255, .4), rgba(255, 255, 255, .6), rgba(255, 255, 255, .7), rgba(255, 255, 255, .8), rgba(255, 255, 255, .86), rgba(255, 255, 255, .75), rgba(255, 255, 255, .5))
+		/*Safari and Chrome*/
+	}
+	
+	.dingyue img {}
+	
+	@keyframes mymove {
+		from {
+			left: -.2rem;
+		}
+		to {
+			left: 2.1rem;
+		}
+	}
+	
+	@-webkit-keyframes mymove
+	/*Safari and Chrome*/
+	
+	{
+		from {
+			left: -.2rem;
+		}
+		to {
+			left: 2.1rem;
+		}
+	}
+	
+	.cancel {
+		display: flex;
+		justify-content: flex-start;
+		background: #FFFFFF;
+		color: #999999;
+		font-size: .15rem;
+		margin-top: 0.25rem;
+	}
+	
+	.card_btn img {
+		border-radius: .5rem;
+		width: 20%;
+	}
+	
+	.more_answer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		bottom: 1.5rem;
+		height: 3rem;
+		color: #666666;
+		font-size: 1rem;
+		/* background: #FFF; */
+		background: rgb(255, 255, 255);
+		opacity: .7;
+	}
+	
+	.gb {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: .4rem;
+		bottom: -0.1rem;
+		color: #666666;
+		font-size: .15rem;
+		margin-bottom: 0.08rem;
+		background: #FFFFFF;
+		margin-bottom: .35rem;
+	}
+	
+	.more_answer img {
+		width: 1rem;
+		height: 1rem;
+		margin-left: 0.5rem;
+	}
+	
+	.more {
+		color: #999999;
+		margin-right: .1rem;
+	}
+	
+	.ri img {
+		width: .1rem;
+		height: .15rem;
+	}
+	
+	.article {
+		display: flex;
+		background: #FFFFFF;
+		padding: 0 .15rem;
+		margin-bottom: 0.01rem;
+		height: 1.2rem;
+		align-items: center;
+	}
+	
+	.wz_readNum {
+		margin-left: .3rem;
+		color: #999999;
+	}
+	
+	.wz_read {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: .25rem;
+		width: .55rem;
+		height: .2rem;
+		color: #FFFFFF;
+		background: #E9E9E9;
+	}
+	
+	.wz_lx {
+		padding-bottom: .09rem;
+		display: flex;
+	}
+	
+	.wz_s {
+		color: #999999;
+		margin-bottom: .09rem;
+	}
+	
+	.wz_title {
+		font-size: .17rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.wz_content {
+		margin-top: 3.5%;
+		margin-left: .15rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 60%;
+	}
+	
+	.wz_img {
+		width: 0.95rem;
+		height: 0.95rem;
+		background: #E9E9E9;
+		border-radius: 0.05rem;
+	}
+	
+	.wz_img img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.head {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2.5rem;
+		background-color: #4198f2;
+		color: #fff;
+		display: flex;
+		z-index: 999;
+	}
+	
+	.head div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.head1 {
+		width: 20%;
+	}
+	
+	.head3 div img {
+		height: 50%;
+	}
+	
+	.head1 div img {
+		height: 75%;
+	}
+	
+	.head3 div,
+	.head1 div {
+		font-size: .16rem;
+		color: #FFFFFF;
+		height: 100%;
+	}
+	
+	.head2 {
+		width: 60%;
+		font-size: 1rem;
+	}
+	
+	.head3 {
+		width: 20%;
+	}
+	
+	.foot {
+		width: 100%;
+		height: 3.5rem;
+		background-color: #fafafa;
+		position: absolute;
+		bottom: 0rem;
+		left: 0rem;
+		display: flex;
+		opacity: 0.95;
+		z-index: 997;
+		padding-bottom: 0;
+	}
+	
+	.footDiv {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: .16rem;
+		margin: .05rem 0;
+		height: 100%;
+	}
+	
+	.footImg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 2rem;
+		width: 80%;
+	}
+	
+	.footDiv img {
+		height: 80%;
+	}
+	
+	.main {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.mainContet {
+		position: relative;
+		width: 375px;
+	}
+	
+	.bigDiv {
+		width: auto;
+		height: auto;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.divEwm {
+		width: 7rem;
+		height: 5rem;
+		margin-top: 4%;
+		margin-left: 1%;
+	}
+	
+	.divEwm img {
+		width: 100%;
+	}
+	
+	input {
+		text-indent: 0;
+		background: transparent;
+		border: 0 none;
+		resize: none;
+		outline: none;
+		/*清除选中效果的默认蓝色边框 */
+		-webkit-appearance: none;
+		/*清除浏览器默认的样式 */
+		line-height: normal;
+	}
+	
+	ul,
+	li {
+		display: flex;
+		padding: 0;
+		margin: 1rem 0 0;
+		list-style: none
+	}
+	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+</style>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<meta name="viewport" content="width=device-width,user-scalable=yes">
+		<meta charset="UTF-8">
+		<title>小兔同学</title>
+	</head>
+
+	<body>
+		<div class="bigDiv">
+			<div class="mainContet" id="bigDiv">
+				<div class="main">
+					<!--头部-->
+					<div class="head">
+						<div class="head1"></div>
+						<div class="head2">小兔同学</div>
+						<div class="head3">
+							<div>
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/tzk.png" alt="">
+							</div>
+						</div>
+					</div>
+					<!--脚部-->
+					<div class="footBigDiv" onclick="jump()">点击前往查看详情</div>
+					<div class="foot">
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/homeNow.png">
+							</div>
+							<div style="color:#7d7a7a">主页</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/jiaofu.png">
+							</div>
+							<div style="color:#7d7a7a">辅导</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/WechatIMG91s.png">
+							</div>
+
+							<div style="color:#7d7a7a">教辅</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/zuoyes.png">
+							</div>
+							<div style="color:#7d7a7a">作业</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/mes.png">
+							</div>
+							<div style="color:#7d7a7a">我的</div>
+						</div>
+					</div>
+					<div class="content">
+						<div class="banner">
+							<img src="https://cdnfile.corpidea.com/upload/2018/08/5b87cd80716bd.png" @click="qyOpen('/8minEnglish')" />
+						</div>
+						<div class="board">
+							<div class="customerGuide">
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/assets/img/homeA.png">
+									<div class="tipTitle">作业答案</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/listenR.png" alt="pic" @click="qyOpen('/listenParents','3')">
+									<div class="tipTitle">听读听写</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/assets/img/studyP.png" alt="pic" @click="qyOpen('/listenParents','3')">
+									<div class="tipTitle">学习计划</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/iconClass.png" alt="pic" @click="qyOpen('/teacherMyClass','5'),newFun('kcb')">
+									<div class="tipTitle">我的班级</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/shop.png" alt="pic" @click="qyOpen('/shop','6'),newFun('yqsc')">
+									<div class="tipTitle">元气商城</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/iconData.png" alt="pic" @click="qyOpen('/database','7')">
+									<div class="tipTitle">资料下载</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/iconFind.jpg" alt="pic" @click="qyOpen('/newsfindList','8')">
+									<div class="tipTitle">发现</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/iconQd.png" alt="pic" @click="qyOpen('/userDaka','9')">
+									<div class="tipTitle">签到打卡</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/assets/img/timetable.png" alt="pic" @click="qyOpen('/userDaka','9')">
+
+									<div class="tipTitle">课程表</div>
+								</div>
+								<div class="tipItem">
+									<img class="guideImg" src="https://cdnfile.corpidea.com/wap/images/iconCk.png" alt="pic" @click="qyOpen('/dictionary','11')">
+									<div class="tipTitle">新华字典</div>
+								</div>
+							</div>
+							<div class="subjectList">
+								<div class="tagBoard">
+									<div class="tagItem">语文</div>
+									<div class="tagItem">数学</div>
+									<div class="tagItem">英语</div>
+									<div class="tagItem">科学</div>
+									<div class="tagItem" style="width: 2rem;">
+										<img class="guideImg" src="https://cdnfile.corpidea.com/wap/assets/img/indexShow.png" alt="pic" @click="qyOpen('/userDaka','9')">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bGG" style="height: 1rem;width: 100%;background: #F9F9F9;"></div>
+						<!--热门教辅-->
+						<div class="planTitle" style="margin-top: 1rem;margin-bottom: 0rem;">
+							<div class="studyPlanL">
+								<div class="tipImg"></div>
+								<div class="planT" style="font-size: 1rem;color: #666;">热门教辅</div>
+							</div>
+							<div class="studyPlanR">
+								<div class="more" style="font-size: .8rem; color: #999;">更多</div>
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/icon-right.png" alt="pic">
+							</div>
+						</div>
+						<div class="nav_card">
+							{volist name='$exam' id='item'}
+							<div class="nav_list">
+								<div class="nav_item">
+									<div class="book">
+										{if $item.picture}
+										<img src="https://cdnfile.corpidea.com{$item.picture}" alt="{$item.title}"> {else /}
+										<img src="https://cdnfile.corpidea.com/style/mobile/images/index_img.png" alt="{$item.title}"> {/if}
+									</div>
+									<div class="book_title">{$item.title}</div>
+								</div>
+							</div>
+							{/volist}
+						</div>
+						<div class="bGG" style="height: 1rem;width: 100%;background: #F9F9F9;"></div>
+						<!--学习计划-->
+						<div class="studyPlan">
+							<div class="planTitle" @click="qyOpen('/studyPlan','22')">
+								<div class="studyPlanL">
+									<div class="tipImg"></div>
+									<div class="planT" style="font-size: 1rem;color: #666;">学习动态</div>
+								</div>
+								<div class="studyPlanR">
+									<div class="more" style="font-size: .8rem; color: #999;">更多</div>
+									<img src="https://cdnfile.corpidea.com/wap/assets/img/icon-right.png" alt="pic">
+								</div>
+							</div>
+						</div>
+						{volist name='$post' id='item'}
+						<div class="article">
+							<div class="wz_img">
+								<img src="https://cdnfile.corpidea.com{$item.picture}" alt="{$item.title}">
+							</div>
+							<div class="wz_content">
+								<div class="wz_title">{$item.title}</div>
+								<div class="wz_lx">
+									<div class="wz_read">
+										{$item.category_id_first|getType}
+									</div>
+									<div class="wz_readNum">{$item.hits_total}人看过</div>
+								</div>
+							</div>
+						</div>
+						{/volist}
+					</div>
+				</div>
+			</div>
+			<div class="divEwm">
+				<img src="https://cdnfile.corpidea.com/wap/assets/img/seoGg.png" />
+			</div>
+		</div>
+	</body>
+
+</html>
+<script>
+	function jump() {
+		var system = {};
+		var p = navigator.platform;
+		system.win = p.indexOf("Win") == 0
+		system.mac = p.indexOf("Mac") == 0
+		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+		if(system.win || system.x11 || system.mac) {
+			var target = document.getElementById("bigDiv")
+			var newDiv = document.createElement("div")
+			newDiv.setAttribute("id", "toastEwm")
+			newDiv.setAttribute("class", "toastEwm")
+			target.appendChild(newDiv)
+			var imgDiv = document.createElement("img")
+			var imgTarget = document.getElementById("toastEwm")
+			imgDiv.setAttribute("src", "https://cdnfile.corpidea.com/wap/assets/img/ewm.jpg")
+			imgTarget.appendChild(imgDiv)
+		} else {
+			window.location.href="https://edu.corpidea.com/m/#/"
+		}
+	}
+</script>
+<style>
+	.article {
+		display: flex;
+		height: 6rem;
+		border-bottom: .01rem #E9E9E9 solid;
+	}
+	
+	.wz_img {
+		width: 20%;
+		background: blue;
+		border-radius: 0.5rem;
+		margin: 3.5%;
+	}
+	
+	.wz_img img {
+		width: 100%;
+	}
+	
+	.wz_readNum {
+		margin-left: 2rem;
+		color: #999999;
+	}
+	
+	.wz_read {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1rem;
+		width: 25%;
+		height: 1.5rem;
+		color: #fff;
+		background-color: #E9E9E9;
+	}
+	
+	.wz_lx {
+		display: flex;
+		align-items: center;
+		font-size: .16rem;
+	}
+	
+	.wz_s {
+		color: #999999;
+		margin-bottom: .09rem;
+	}
+	
+	.wz_title {
+		font-size: 1rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.wz_content {
+		margin: 3.5% 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 70%;
+	}
+	
+	.toastEwm {
+		position: absolute;
+		height: 100%;
+		width: 378px;
+		background: rgba(0, 0, 0, .6);
+		z-index: 1008;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.toastEwm img {
+		width: 80%;
+	}
+	
+	.footBigDiv {
+		width: 100%;
+		height: 2rem;
+		background-color: #FD9A95;
+		position: absolute;
+		bottom: 3.5rem;
+		left: 0rem;
+		display: flex;
+		opacity: 0.95;
+		z-index: 997;
+		padding-bottom: 0;
+		color: #fff;
+		font-weight: 500;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+	
+	.xzImg {
+		width: 1rem;
+		height: 1rem;
+		margin-right: .5rem;
+	}
+	
+	.xzImg img {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.btnXz {
+		background: #4098F2;
+		width: 40%;
+	}
+	
+	.btnSc {
+		background: #ED6660;
+		width: 60%;
+	}
+	
+	.btnXzSc div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: .17rem;
+	}
+	
+	.btnXzSc {
+		position: absolute;
+		bottom: 5.5rem;
+		height: 2.5rem;
+		display: flex;
+		left: 0;
+		right: 0;
+		color: red;
+	}
+	
+	.sjName {
+		font-size: .16rem;
+		display: flex;
+		padding-left: 1rem;
+		align-items: center;
+		height: 4rem;
+		color: #646464;
+	}
+	
+	.imgLook {
+		background-size: 100% 100% !important;
+		height: 55%;
+		margin: 0 1.5rem 1rem;
+		box-shadow: -1px 1px 10px #dadada;
+	}
+	
+	.imgLook img {
+		width: 100%;
+	}
+	
+	.bannerFoot {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		height: 10rem;
+		background: #FFFFFF;
+	}
+	
+	.boxJ {
+		margin-top: .7rem;
+		margin-right: .5rem;
+		width: 0;
+		border-width: .9rem .6rem .9rem .6rem;
+		border-style: solid;
+		border-color: #000 transparent transparent transparent;
+	}
+	
+	.picture {
+		width: 100%;
+		margin-bottom: 100rem;
+	}
+	
+	.ewm {
+		width: 7rem;
+		height: 7rem;
+		margin-left: .5rem;
+	}
+	
+	.ewm img {
+		border: 0.01rem #FFFFFF solid;
+		box-shadow: -.05rem -.05rem #dadada;
+		height: 100%;
+		width: 100% !important;
+	}
+	
+	.titleEssay {
+		font-size: 1.5rem;
+		font-weight: bold;
+		display: block;
+		margin: 1.5rem 0;
+	}
+	
+	.content {
+		position: relative;
+		height: 100%;
+		margin-top: 2.8rem;
+		width: 100%;
+		overflow-y: scroll;
+		padding-bottom: 8rem;
+	}
+	
+	.main {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.bigDiv {
+		width: auto;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.divEwm {
+		width: 7rem;
+		margin-top: 4%;
+		margin-left: 1%;
+	}
+	
+	.divEwm img {
+		width: 100%;
+	}
+	
+	.mainContet {
+		position: relative;
+		width: 375px;
+	}
+	
+	.head {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2.8rem;
+		background-color: #4198f2;
+		color: #fff;
+		display: flex;
+		z-index: 999;
+	}
+	
+	.head div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.head1 {
+		width: 20%;
+	}
+	
+	.head1 img {
+		width: 40%;
+	}
+	
+	.head3 div img {
+		height: 50%;
+	}
+	
+	.head3 div {
+		font-size: .16rem;
+		color: #FFFFFF;
+		width: 50%;
+		height: 100%;
+	}
+	
+	.head2 {
+		width: 60%;
+		font-size: 1rem;
+	}
+	
+	.head3 {
+		width: 20%;
+	}
+	
+	.foot {
+		width: 100%;
+		height: 3.5rem;
+		background-color: #fafafa;
+		position: absolute;
+		bottom: 0rem;
+		left: 0rem;
+		display: flex;
+		opacity: 0.95;
+		z-index: 997;
+		padding-bottom: 0;
+	}
+	
+	.footDiv {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: .16rem;
+		margin: .05rem 0;
+		height: 100%;
+	}
+	
+	.footImg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 2rem;
+		width: 80%;
+	}
+	
+	.footDiv img {
+		height: 70%;
+	}
+	
+	.jrzyDivKC_add {
+		margin-top: .1rem;
+		height: .3rem;
+		border-radius: .08rem;
+		border: 0.02rem #EFEFEF dashed;
+		background: #FFFFFF;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.jrzyDivKC_add img {
+		width: .15rem;
+		height: .15rem;
+	}
+	
+	.xzKMyw {
+		background-color: #3BA3FF !important;
+	}
+	
+	.xzKMsx {
+		background-color: #eaa844 !important;
+	}
+	
+	.xzKMyy {
+		background-color: #44C153 !important;
+	}
+	
+	.nav_card {
+		display: flex;
+		padding-left: 1rem;
+		padding-bottom: 1rem;
+		overflow: auto;
+		display: flex;
+		white-space: nowrap;
+		background: #FFFFFF;
+	}
+	
+	.nav_list {
+		margin-top: 1rem;
+	}
+	
+	.nav_item {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-right: 1rem;
+		width: 5rem;
+	}
+	
+	.book {
+		width: 5rem;
+		height: 8rem;
+		background: #666666;
+	}
+	
+	.book img {
+		height: 100%;
+	}
+	
+	.book_title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		overflow: hidden;
+		margin-top: .7rem;
+		font-size: .13rem;
+		white-space: normal;
+		word-break: break-all;
+		word-wrap: break-word;
+	}
+	
+	.book_info {
+		font-size: .1rem;
+		margin-top: .05rem;
+	}
+	
+	.timePlan {
+		background: #FFFFFF;
+	}
+	
+	.timeKbT {
+		background: #FFFFFF;
+		display: flex;
+		width: 94%;
+		padding: 0 3% 2% 3%;
+		color: #989898;
+	}
+	
+	.timeKbN div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 10.5%;
+		margin: 0 1%;
+		height: .18rem;
+		background-color: red;
+		border-radius: .05rem;
+	}
+	
+	.timeKbN {
+		display: flex;
+		width: 96%;
+		margin: 0 2%;
+		padding: 4% 0;
+		color: #FFFFFF;
+		background: #FFFFFF;
+	}
+	
+	.timeKb {
+		width: 94%;
+		margin: 0 3%;
+		height: 100%;
+		background-color: #fafafa;
+		border-radius: .05rem;
+		background: #FFFFFF;
+	}
+	
+	.inRightDivest {
+		height: .26rem;
+		font-size: .2rem;
+		margin: 3% 0 0 6%;
+	}
+	
+	.pCon {
+		position: absolute;
+		width: 97%;
+		z-index: 8;
+	}
+	
+	.inLeftDiv {
+		z-index: 6;
+		position: absolute;
+		width: 3%;
+		height: 100%;
+		border-radius: .05rem 0 0 .05rem;
+	}
+	
+	.rwkDiv {
+		width: 90%;
+		margin: 0 5% 5% 5%;
+		height: .5rem;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: .05rem 0 0 .05rem;
+		font-size: .15rem;
+		color: #696969;
+	}
+	
+	.outBigDiv {
+		border-radius: 0.05rem;
+		position: relative;
+		width: 90%;
+		margin: 0 4% 5%;
+		height: 1rem;
+		font-size: .15rem;
+		color: #fff;
+		display: flex;
+	}
+	/*遮罩*/
+	
+	.mask {
+		position: absolute;
+		height: 1rem;
+		width: 90%;
+		top: 0;
+		left: 0;
+		opacity: 0.28;
+		z-index: 5;
+		background: linear-gradient(90deg, rgb(3, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+		border-radius: .05rem;
+	}
+	
+	.inRightDiv {
+		width: 97%;
+		border-radius: 0 0.05rem 0.05rem 0;
+		background-size: 100% 100% !important;
+		height: 100%;
+		margin-left: 3%;
+	}
+	
+	.pCon {
+		position: absolute;
+		width: 97%;
+		z-index: 6;
+	}
+	
+	.planTitle {
+		padding: 0 1rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		background: #FFFFFF;
+		justify-content: space-between;
+	}
+	
+	.studyPlanL {
+		display: flex;
+		align-items: center;
+	}
+	
+	.studyPlanR {
+		display: flex;
+		align-items: center;
+		width: 20%;
+		justify-content: flex-end;
+	}
+	
+	.studyPlanR img {
+		width: 20%;
+	}
+	
+	.dailyBoard,
+	.nullBoard {
+		height: 1.27rem;
+		background-color: #f7f7f7;
+		border-radius: .05rem;
+		padding-bottom: .01rem;
+		margin-bottom: .1rem;
+	}
+	
+	.nullBoard {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background: #FFFFFF;
+		color: #999;
+	}
+	
+	.dailyBookTitle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: .3rem;
+		font-size: .13rem;
+		color: #666666;
+	}
+	
+	.dailyBookTest {
+		width: 96%;
+		margin: 0 2% 2% 2%;
+		height: .9rem;
+		background-color: #fff;
+		border-radius: .05rem;
+	}
+	
+	.dailyBookTest div {
+		display: flex;
+		align-items: center;
+		width: 95%;
+		height: 33.333%;
+		font-size: .14rem;
+		padding-left: 5%;
+		color: #a2a2a2;
+	}
+	
+	.tjDiv {
+		background-color: #e9e9e9 !important;
+		color: #e7aa49 !important;
+	}
+	
+	.dailyWork {
+		padding: 0 0.15rem 0.15rem;
+		background: #FFFFFF;
+		margin-top: .15rem;
+	}
+	
+	.studyPlan {
+		margin-top: .15rem;
+	}
+	
+	.dailyWorkTip {
+		height: .44rem;
+		display: flex;
+		font-size: .18rem;
+		color: #666;
+		align-items: center;
+		border-bottom: .01rem solid #f6f6f6;
+		border-top: 0.01rem #F6F6F6 solid;
+	}
+	
+	.tipImg {
+		width: .5rem;
+		height: .5rem;
+		background: #0099F9;
+		margin-right: .5rem;
+	}
+	
+	.dailySubject {
+		white-space: nowrap;
+		display: box;
+		display: -webkit-box;
+		overflow: auto;
+		width: 100%;
+		margin-top: 3%;
+	}
+	
+	.dailySubject::-webkit-scrollbar {
+		display: none;
+	}
+	
+	.dailySubject div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 27%;
+		height: .27rem;
+		font-size: .16rem;
+		background-color: #cfcfcf;
+		margin: 0 3%;
+		border-radius: .05rem;
+		color: #fff;
+	}
+	
+	.tagBoard {
+		display: flex;
+		padding-bottom: 1rem;
+	}
+	
+	.subjectList {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.tagItem {
+		color: rgb(153, 153, 153);
+		margin: 0 2%;
+		width: 16%;
+		height: 2rem;
+		font-size: .13rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 0.01rem #FFFFFF solid;
+		border-radius: 0.5rem;
+		box-shadow: .04rem .05rem .1rem #dadada;
+	}
+	
+	.tagItem img {
+		width: 60%;
+	}
+	
+	.tipTitle {
+		color: rgb(102, 102, 102);
+		font-size: .13rem;
+		margin-top: 0.5rem;
+	}
+	
+	.tipItem {
+		display: flex;
+		flex: 0 0 20%;
+		margin-bottom: 1rem;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	.tipItem img {
+		width: 70%;
+	}
+	
+	.customerGuide {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.board {
+		background: #FFFFFF;
+		padding: 0 .15rem;
+	}
+	
+	.banner {
+		height: 8rem;
+		background: #FFFFFF;
+		width: 100%;
+		padding-bottom: .1rem;
+	}
+	
+	.banner img {
+		width: 100%;
+	}
+</style>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<meta name="viewport" content="width=device-width,user-scalable=yes">
+		<meta charset="UTF-8">
+		<title>教辅</title>
+	</head>
+
+	<body>
+		<div class="bigDiv">
+			<div class="mainContet" id="bigDiv">
+				<div class="main">
+					<!--头部-->
+					<div class="head">
+						<div class="head1"></div>
+						<div class="head2">教辅</div>
+						<div class="head3">
+							<div>
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/search_W.png" alt="">
+							</div>
+						</div>
+					</div>
+					<!--脚部-->
+					<div class="footBigDiv" onclick="jump()">点击前往查看详情</div>
+					<div class="footBigDiv" onclick="jump()">点击前往查看详情</div>
+					<div class="foot">
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/homes.png">
+							</div>
+							<div style="color:#7d7a7a">主页</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/jiaofu.png">
+							</div>
+							<div style="color:#7d7a7a">辅导</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/WechatIMG91s.png">
+							</div>
+
+							<div style="color:#7d7a7a">教辅</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/zuoyes.png">
+							</div>
+							<div style="color:#7d7a7a">作业</div>
+						</div>
+						<div class="footDiv">
+							<div class="footImg">
+								<img src="https://cdnfile.corpidea.com/wap/assets/img/mes.png">
+							</div>
+							<div style="color:#7d7a7a">我的</div>
+						</div>
+					</div>
+					<!--内容-->
+					<div style="height: 100%;overflow-y: scroll;">
+						<div class="ulDiv">
+							{volist name='$list' id='item'}
+							<div class="list">
+								<div class="dyDiv">
+									{if $item.picture }
+									<img src="https://cdnfile.corpidea.com{$item.picture}" alt="{$item.title}"> {else /}
+									<img src="https://cdnfile.corpidea.com/style/mobile/images/index_img.png" alt="{$item.title}"> {/if}
+									<div style="display: flex;justify-content:center; align-items:center;">
+										{$item.title}
+									</div>
+									<div>{$item.grade_id|getGrade}</div>
+									<div>{$item.semester_id|getSemester}</div>
+								</div>
+							</div>
+							{/volist}
+						</div>
+						<div class="list" style="margin:0 0 6rem 1rem;width: auto;">
+							{volist name='$pageList' id='item'}
+							<a href="{$item.path}">第{$item.name}页</a>
+							{/volist}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="divEwm">
+				<img src="https://cdnfile.corpidea.com/wap/assets/img/seoGg.png" />
+			</div>
+		</div>
+	</body>
+
+</html>
+<script>
+	function jump() {
+		var system = {};
+		var p = navigator.platform;
+		system.win = p.indexOf("Win") == 0
+		system.mac = p.indexOf("Mac") == 0
+		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+		if(system.win || system.x11 || system.mac) {
+			var target = document.getElementById("bigDiv")
+			var newDiv = document.createElement("div")
+			newDiv.setAttribute("id", "toastEwm")
+			newDiv.setAttribute("class", "toastEwm")
+			target.appendChild(newDiv)
+			var imgDiv = document.createElement("img")
+			var imgTarget = document.getElementById("toastEwm")
+			imgDiv.setAttribute("src", "https://cdnfile.corpidea.com/wap/assets/img/ewm.jpg")
+			imgTarget.appendChild(imgDiv)
+		} else {
+			window.open("https://edu.corpidea.com/m/#/examList?parent_id=7")
+		}
+	}
+</script>
+<style>
+	.toastEwm {
+		position: absolute;
+		height: 100%;
+		width: 378px;
+		background: rgba(0, 0, 0, .6);
+		z-index: 1008;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.toastEwm img {
+		width: 80%;
+	}
+	
+	.footBigDiv {
+		width: 100%;
+		height: 2rem;
+		background-color: #FD9A95;
+		position: absolute;
+		bottom: 3.5rem;
+		left: 0rem;
+		display: flex;
+		opacity: 0.95;
+		z-index: 997;
+		padding-bottom: 0;
+		color: #fff;
+		font-weight: 500;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+	}
+	
+	.ulDiv {
+		width: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		align-content: flex-start;
+		overflow: auto;
+		margin: 4.5rem 0 0;
+	}
+	
+	.list {
+		width: 33.3%;
+		box-sizing: border-box;
+		display: flex;
+		margin-bottom: 1.5rem;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.dyDiv {
+		width: 80%;
+		height: 100%;
+		font-size: .13rem;
+	}
+	
+	.dyDiv div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.list img {
+		box-shadow: 1px 1px 3px #6C6C6C;
+		width: 100%;
+	}
+	
+	.head {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2.5rem;
+		background-color: #4198f2;
+		color: #fff;
+		display: flex;
+		z-index: 999;
+	}
+	
+	.head div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+	
+	.head1 {
+		width: 20%;
+	}
+	
+	.head1 img {
+		width: 40%;
+	}
+	
+	.head3 div img {
+		height: 50%;
+	}
+	
+	.head3 div {
+		font-size: .16rem;
+		color: #FFFFFF;
+		height: 100%;
+	}
+	
+	.head2 {
+		width: 60%;
+		font-size: 1rem;
+	}
+	
+	.head3 {
+		width: 20%;
+	}
+	
+	.foot {
+		width: 100%;
+		height: 3.5rem;
+		background-color: #fafafa;
+		position: absolute;
+		bottom: 0rem;
+		left: 0rem;
+		display: flex;
+		opacity: 0.95;
+		z-index: 997;
+		padding-bottom: 0;
+	}
+	
+	.footDiv {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: .16rem;
+		margin: .05rem 0;
+		height: 100%;
+	}
+	
+	.footImg {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 2rem;
+		width: 80%;
+	}
+	
+	.footDiv img {
+		height: 80%;
+	}
+	
+	.main {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.mainContet {
+		position: relative;
+		width: 375px;
+	}
+	
+	.bigDiv {
+		width: auto;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.divEwm {
+		width: 7rem;
+		height: 5rem;
+		margin-top: 4%;
+		margin-left: 1%;
+	}
+	
+	.divEwm img {
+		width: 100%;
+	}
+	
+	input {
+		margin-top: 1rem;
+		text-indent: 0;
+		background: transparent;
+		border: 0 none;
+		resize: none;
+		outline: none;
+		/*清除选中效果的默认蓝色边框 */
+		-webkit-appearance: none;
+		/*清除浏览器默认的样式 */
+		line-height: normal;
+	}
+	
+	ul,
+	li {
+		display: flex;
+		padding: 0;
+		margin: 1rem 0 0;
+		list-style: none
+	}
+	
+	a {
+		margin-right: .35rem;
+	}
+</style>
